@@ -1,5 +1,5 @@
 const archiver = require('archiver');
-const chalk = require('chalk');
+// const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
 
@@ -30,10 +30,10 @@ class Zip {
       output.on('close', function () {
         // 删除目标文件夹
         fs.rmdirSync(filePath, { recursive: true });
-        chalk.green('压缩完成');
+        // chalk.green('压缩完成');
       });
       archive.on('error', function (err) {
-        chalk.red('压缩失败', err);
+        console.error('压缩失败', err);
       });
       archive.finalize();
     });

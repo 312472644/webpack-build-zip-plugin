@@ -1,37 +1,39 @@
 {
-  "name": "dist-zip-plugin",
-  "version": "1.0.0",
+  "name": "webpack-plugin-dist-zip",
+  "version": "1.1.0",
   "description": "dist zip plugin",
-  "main": "./dist/index.js",
-  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "scripts": {
     "build": "rollup -c",
     "prepublish": "npm run build",
-    "publish": "npm publish --registry https://registry.npmjs.org"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/flaw_du/build-pugin.git"
   },
   "files": [
-    "dist"
-  ],
-  "exclude": [
-    "node_modules"
+    "dist",
+    "types",
+    "README.md"
   ],
   "keywords": [
     "webpack",
     "dist",
     "zip"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "engines": {
-    "node": ">=14"
+    "node": ">=14.0.0"
   },
   "author": "sugar_free",
   "license": "ISC",
   "exports": {
     "import": "./dist/es/index.js",
-    "require": "./dist/cjs/index.js"
+    "default": "./dist/cjs/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
@@ -44,7 +46,7 @@
     "rollup-plugin-progress": "^1.1.2"
   },
   "dependencies": {
-    "archiver": "^5.3.1",
-    "chalk": "^5.2.0"
-  }
+    "archiver": "^5.3.1"
+  },
+  "types": "./types/index.d.ts"
 }
