@@ -1,5 +1,4 @@
 const archiver = require('archiver');
-// const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
 
